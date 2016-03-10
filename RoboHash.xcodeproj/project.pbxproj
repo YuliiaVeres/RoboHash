@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32E3FB161C91F78600478D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB151C91F78600478D2E /* main.m */; };
+		32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB181C91F78600478D2E /* AppDelegate.m */; };
+		32E3FB1F1C91F78600478D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB1D1C91F78600478D2E /* Main.storyboard */; };
+		32E3FB211C91F78600478D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB201C91F78600478D2E /* Assets.xcassets */; };
+		32E3FB241C91F78600478D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB221C91F78600478D2E /* LaunchScreen.storyboard */; };
+		32E3FB301C92027F00478D2E /* RHIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB2F1C92027F00478D2E /* RHIConstants.m */; };
+		32E3FB351C920AB500478D2E /* RHIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB341C920AB500478D2E /* RHIRequestManager.m */; };
+		32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB371C921A1E00478D2E /* RHIViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		32E3FB111C91F78600478D2E /* RoboHash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboHash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E3FB151C91F78600478D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32E3FB171C91F78600478D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		32E3FB181C91F78600478D2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		32E3FB1E1C91F78600478D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		32E3FB201C91F78600478D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32E3FB231C91F78600478D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32E3FB251C91F78600478D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E3FB2E1C92027F00478D2E /* RHIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIConstants.h; path = Model/RHIConstants.h; sourceTree = "<group>"; };
+		32E3FB2F1C92027F00478D2E /* RHIConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIConstants.m; path = Model/RHIConstants.m; sourceTree = "<group>"; };
+		32E3FB331C920AB500478D2E /* RHIRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIRequestManager.h; path = Model/RHIRequestManager.h; sourceTree = "<group>"; };
+		32E3FB341C920AB500478D2E /* RHIRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIRequestManager.m; path = Model/RHIRequestManager.m; sourceTree = "<group>"; };
+		32E3FB361C921A1E00478D2E /* RHIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIViewController.h; path = Controller/RHIViewController.h; sourceTree = "<group>"; };
+		32E3FB371C921A1E00478D2E /* RHIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIViewController.m; path = Controller/RHIViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32E3FB0E1C91F78600478D2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32E3FB081C91F78600478D2E = {
+			isa = PBXGroup;
+			children = (
+				32E3FB131C91F78600478D2E /* RoboHash */,
+				32E3FB121C91F78600478D2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		32E3FB121C91F78600478D2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32E3FB111C91F78600478D2E /* RoboHash.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32E3FB131C91F78600478D2E /* RoboHash */ = {
+			isa = PBXGroup;
+			children = (
+				32E3FB2D1C91F7F100478D2E /* Controller */,
+				32E3FB2C1C91F7E800478D2E /* View */,
+				32E3FB2B1C91F7E300478D2E /* Model */,
+				32E3FB171C91F78600478D2E /* AppDelegate.h */,
+				32E3FB181C91F78600478D2E /* AppDelegate.m */,
+				32E3FB1D1C91F78600478D2E /* Main.storyboard */,
+				32E3FB201C91F78600478D2E /* Assets.xcassets */,
+				32E3FB221C91F78600478D2E /* LaunchScreen.storyboard */,
+				32E3FB251C91F78600478D2E /* Info.plist */,
+				32E3FB141C91F78600478D2E /* Supporting Files */,
+			);
+			path = RoboHash;
+			sourceTree = "<group>";
+		};
+		32E3FB141C91F78600478D2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				32E3FB151C91F78600478D2E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32E3FB2B1C91F7E300478D2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32E3FB321C920A7F00478D2E /* NetworkLayer */,
+				32E3FB311C920A7800478D2E /* Constants */,
+				32E3FB2E1C92027F00478D2E /* RHIConstants.h */,
+				32E3FB2F1C92027F00478D2E /* RHIConstants.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		32E3FB2C1C91F7E800478D2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		32E3FB2D1C91F7F100478D2E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				32E3FB361C921A1E00478D2E /* RHIViewController.h */,
+				32E3FB371C921A1E00478D2E /* RHIViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		32E3FB311C920A7800478D2E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		32E3FB321C920A7F00478D2E /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				32E3FB331C920AB500478D2E /* RHIRequestManager.h */,
+				32E3FB341C920AB500478D2E /* RHIRequestManager.m */,
+			);
+			name = NetworkLayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32E3FB101C91F78600478D2E /* RoboHash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32E3FB281C91F78600478D2E /* Build configuration list for PBXNativeTarget "RoboHash" */;
+			buildPhases = (
+				32E3FB0D1C91F78600478D2E /* Sources */,
+				32E3FB0E1C91F78600478D2E /* Frameworks */,
+				32E3FB0F1C91F78600478D2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoboHash;
+			productName = RoboHash;
+			productReference = 32E3FB111C91F78600478D2E /* RoboHash.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32E3FB091C91F78600478D2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RHI;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Yuliia Veresklia";
+				TargetAttributes = {
+					32E3FB101C91F78600478D2E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 32E3FB0C1C91F78600478D2E /* Build configuration list for PBXProject "RoboHash" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32E3FB081C91F78600478D2E;
+			productRefGroup = 32E3FB121C91F78600478D2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32E3FB101C91F78600478D2E /* RoboHash */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32E3FB0F1C91F78600478D2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E3FB241C91F78600478D2E /* LaunchScreen.storyboard in Resources */,
+				32E3FB211C91F78600478D2E /* Assets.xcassets in Resources */,
+				32E3FB1F1C91F78600478D2E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32E3FB0D1C91F78600478D2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E3FB301C92027F00478D2E /* RHIConstants.m in Sources */,
+				32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */,
+				32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */,
+				32E3FB161C91F78600478D2E /* main.m in Sources */,
+				32E3FB351C920AB500478D2E /* RHIRequestManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		32E3FB1D1C91F78600478D2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32E3FB1E1C91F78600478D2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		32E3FB221C91F78600478D2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32E3FB231C91F78600478D2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		32E3FB261C91F78600478D2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		32E3FB271C91F78600478D2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		32E3FB291C91F78600478D2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RoboHash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yveres.RoboHash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		32E3FB2A1C91F78600478D2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RoboHash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yveres.RoboHash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32E3FB0C1C91F78600478D2E /* Build configuration list for PBXProject "RoboHash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E3FB261C91F78600478D2E /* Debug */,
+				32E3FB271C91F78600478D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32E3FB281C91F78600478D2E /* Build configuration list for PBXNativeTarget "RoboHash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E3FB291C91F78600478D2E /* Debug */,
+				32E3FB2A1C91F78600478D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32E3FB091C91F78600478D2E /* Project object */;
+}
