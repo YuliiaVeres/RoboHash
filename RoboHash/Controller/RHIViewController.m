@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) NSCache *cache;
 @property (strong, nonatomic) NSDate *currentTime;
+@property (strong, nonatomic) NSTimer *inputTimer;
 
 @end
 
@@ -30,12 +31,25 @@
     self.currentTime = [NSDate date];
 }
 
+#pragma mark - Timer related
+
+- (void)sendFinalRequest
+{
+    if (self.robotTextField.text.length == 0)
+    {
+        self.robotImageView.image = nil;
+        return;
+    }
+    
+    [self obtainRobotForString:self.robotTextField.text];
+    [self.inputTimer invalidate];
+}
+
 #pragma mark - Image obtain request
 
 - (void)obtainRobotForString:(NSString *)requestString
 {
     UIImage *cachedImage = [self.cache objectForKey:requestString];
-    
     if (cachedImage)
     {
         self.robotImageView.image = cachedImage;
@@ -64,7 +78,10 @@
     self.currentTime = [NSDate date];
     
     if (typeInterval < RHIMinimumTypeInterval)
+    {
+        self.inputTimer = [NSTimer scheduledTimerWithTimeInterval:RHIMinimumTypeInterval target:self selector:@selector(sendFinalRequest) userInfo:nil repeats:NO];
         return YES;
+    }
     
     NSString *requestString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     
