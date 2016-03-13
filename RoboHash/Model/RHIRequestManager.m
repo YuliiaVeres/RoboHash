@@ -31,13 +31,10 @@
     
     [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSString *requestedRobot = response.URL.pathComponents.lastObject;
-           
-            if (completion)
-                completion([UIImage imageWithData:data], requestedRobot);
-        });
+        NSString *requestedRobot = response.URL.pathComponents.lastObject;
+        
+        if (completion)
+            completion([UIImage imageWithData:data], requestedRobot);
     }] resume];
 }
 

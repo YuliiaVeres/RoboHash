@@ -351,6 +351,7 @@
 				32E3FB2A1C91F78600478D2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

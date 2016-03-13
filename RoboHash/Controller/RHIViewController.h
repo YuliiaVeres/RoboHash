@@ -10,6 +10,5 @@
 
 @interface RHIViewController : UIViewController
 
-
 @end
 

@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *robotImageView;
 @property (weak, nonatomic) IBOutlet UITextField *robotTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) NSCache *cache;
 @property (strong, nonatomic) NSDate *currentTime;
@@ -33,16 +34,14 @@
 
 #pragma mark - Timer related
 
-- (void)sendFinalRequest
+- (void)sendFinalRequest:(NSTimer *)timer
 {
-    if (self.robotTextField.text.length == 0)
-    {
-        self.robotImageView.image = nil;
-        return;
-    }
-    
-    [self obtainRobotForString:self.robotTextField.text];
     [self.inputTimer invalidate];
+    self.robotImageView.image = nil;
+    
+    BOOL shouldObtainImage = self.robotTextField.text.length > 0;
+    if (shouldObtainImage)
+        [self obtainRobotForString:self.robotTextField.text];
 }
 
 #pragma mark - Image obtain request
@@ -52,9 +51,15 @@
     UIImage *cachedImage = [self.cache objectForKey:requestString];
     if (cachedImage)
     {
+        NSLog(@"Retrieving image from cache for: %@", requestString);
+        
         self.robotImageView.image = cachedImage;
         return;
     }
+    
+    NSLog(@"Obtaining image for : %@", requestString);
+    
+    [self.activityIndicator startAnimating];
     
     __weak __typeof(self)weakSelf = self;
     
@@ -63,10 +68,14 @@
         typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf.cache setObject:robotImage forKey:robotString];
         
-        if (![robotString isEqualToString:strongSelf.robotTextField.text])
+        if (![robotString isEqualToString:strongSelf.robotTextField.text] && robotImage)
             return;
         
-        strongSelf.robotImageView.image = robotImage;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [strongSelf.activityIndicator stopAnimating];
+            strongSelf.robotImageView.image = robotImage;
+        });
     }];
 }
 
@@ -74,24 +83,11 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    CGFloat typeInterval = fabs([self.currentTime timeIntervalSinceNow]);
     self.currentTime = [NSDate date];
     
-    if (typeInterval < RHIMinimumTypeInterval)
-    {
-        self.inputTimer = [NSTimer scheduledTimerWithTimeInterval:RHIMinimumTypeInterval target:self selector:@selector(sendFinalRequest) userInfo:nil repeats:NO];
-        return YES;
-    }
+    [self.inputTimer invalidate];
+    self.inputTimer = [NSTimer scheduledTimerWithTimeInterval:RHIMinimumTypeInterval target:self selector:@selector(sendFinalRequest:) userInfo:nil repeats:NO];
     
-    NSString *requestString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    
-    if (requestString.length == 0)
-    {
-        self.robotImageView.image = nil;
-        return YES;
-    }
-    
-    [self obtainRobotForString:requestString];
     return YES;
 }
 

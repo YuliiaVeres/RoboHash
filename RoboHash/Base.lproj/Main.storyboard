@@ -34,15 +34,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Kkk-7j-WOl"/>
                                 </connections>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-wO-yGh">
+                                <rect key="frame" x="290" y="310" width="20" height="20"/>
+                                <color key="tintColor" red="1" green="0.050363607589999998" blue="0.1414451602" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nXd-Qp-ypQ" firstAttribute="top" secondItem="uen-37-KZd" secondAttribute="bottom" constant="15" id="2ly-95-TJv"/>
                             <constraint firstItem="uen-37-KZd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="70" id="Cya-z7-sP8"/>
+                            <constraint firstItem="tjk-wO-yGh" firstAttribute="centerY" secondItem="uen-37-KZd" secondAttribute="centerY" id="RkV-uG-ExJ"/>
                             <constraint firstAttribute="trailing" secondItem="uen-37-KZd" secondAttribute="trailing" constant="70" id="UC9-qL-vRx"/>
                             <constraint firstItem="nXd-Qp-ypQ" firstAttribute="width" secondItem="uen-37-KZd" secondAttribute="width" id="VnG-uo-fZs"/>
                             <constraint firstItem="uen-37-KZd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="asf-3n-hhJ"/>
+                            <constraint firstItem="tjk-wO-yGh" firstAttribute="centerX" secondItem="uen-37-KZd" secondAttribute="centerX" id="cEA-ft-rc9"/>
                             <constraint firstItem="nXd-Qp-ypQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jg9-qB-OjK"/>
                         </constraints>
                         <connections>
@@ -50,6 +56,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="tjk-wO-yGh" id="Ybm-ob-eAk"/>
                         <outlet property="robotImageView" destination="uen-37-KZd" id="glX-ob-ta2"/>
                         <outlet property="robotTextField" destination="nXd-Qp-ypQ" id="fkZ-0T-T5F"/>
                     </connections>

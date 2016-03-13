@@ -9,3 +9,4 @@
 #import "RHIConstants.h"
 
 NSString * const RHIBaseUrl = @"https://robohash.org/";
+CGFloat const RHIMinimumTypeInterval = 0.7;

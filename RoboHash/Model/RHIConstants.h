@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-#define RHIMinimumTypeInterval 0.7
+#import <UIKit/UIKit.h>
 
 extern NSString * const RHIBaseUrl;
+extern CGFloat const RHIMinimumTypeInterval;
