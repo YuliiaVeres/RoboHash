@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32A3F1C51C9569940070C981 /* RHIViewController+InitialImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1C41C9569940070C981 /* RHIViewController+InitialImages.m */; };
+		32A3F1CD1C956ED40070C981 /* InitialRequestStrings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32A3F1CC1C956ED40070C981 /* InitialRequestStrings.txt */; };
+		32A3F1D01C95A3A50070C981 /* NSObject+BackgroundOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1CF1C95A3A50070C981 /* NSObject+BackgroundOperation.m */; };
+		32A3F1D31C95A5F70070C981 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1D21C95A5F70070C981 /* UIViewController+Alerts.m */; };
 		32E3FB161C91F78600478D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB151C91F78600478D2E /* main.m */; };
 		32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB181C91F78600478D2E /* AppDelegate.m */; };
 		32E3FB1F1C91F78600478D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB1D1C91F78600478D2E /* Main.storyboard */; };
@@ -18,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32A3F1C31C9569940070C981 /* RHIViewController+InitialImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RHIViewController+InitialImages.h"; path = "Categories/RHIViewController+InitialImages.h"; sourceTree = "<group>"; };
+		32A3F1C41C9569940070C981 /* RHIViewController+InitialImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RHIViewController+InitialImages.m"; path = "Categories/RHIViewController+InitialImages.m"; sourceTree = "<group>"; };
+		32A3F1CC1C956ED40070C981 /* InitialRequestStrings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = InitialRequestStrings.txt; path = Resources/InitialStrings/InitialRequestStrings.txt; sourceTree = "<group>"; };
+		32A3F1CE1C95A3A50070C981 /* NSObject+BackgroundOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+BackgroundOperation.h"; path = "Categories/NSObject+BackgroundOperation.h"; sourceTree = "<group>"; };
+		32A3F1CF1C95A3A50070C981 /* NSObject+BackgroundOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+BackgroundOperation.m"; path = "Categories/NSObject+BackgroundOperation.m"; sourceTree = "<group>"; };
+		32A3F1D11C95A5F70070C981 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Alerts.h"; path = "Categories/UIViewController+Alerts.h"; sourceTree = "<group>"; };
+		32A3F1D21C95A5F70070C981 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Alerts.m"; path = "Categories/UIViewController+Alerts.m"; sourceTree = "<group>"; };
 		32E3FB111C91F78600478D2E /* RoboHash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboHash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E3FB151C91F78600478D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32E3FB171C91F78600478D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,6 +56,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32A3F1C21C9569700070C981 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				32A3F1C31C9569940070C981 /* RHIViewController+InitialImages.h */,
+				32A3F1C41C9569940070C981 /* RHIViewController+InitialImages.m */,
+				32A3F1CE1C95A3A50070C981 /* NSObject+BackgroundOperation.h */,
+				32A3F1CF1C95A3A50070C981 /* NSObject+BackgroundOperation.m */,
+				32A3F1D11C95A5F70070C981 /* UIViewController+Alerts.h */,
+				32A3F1D21C95A5F70070C981 /* UIViewController+Alerts.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		32A3F1C61C956B180070C981 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32A3F1C71C956B240070C981 /* InitialStrings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		32A3F1C71C956B240070C981 /* InitialStrings */ = {
+			isa = PBXGroup;
+			children = (
+				32A3F1CC1C956ED40070C981 /* InitialRequestStrings.txt */,
+			);
+			name = InitialStrings;
+			sourceTree = "<group>";
+		};
 		32E3FB081C91F78600478D2E = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +104,11 @@
 		32E3FB131C91F78600478D2E /* RoboHash */ = {
 			isa = PBXGroup;
 			children = (
+				32A3F1C21C9569700070C981 /* Categories */,
 				32E3FB2D1C91F7F100478D2E /* Controller */,
 				32E3FB2C1C91F7E800478D2E /* View */,
 				32E3FB2B1C91F7E300478D2E /* Model */,
+				32A3F1C61C956B180070C981 /* Resources */,
 				32E3FB171C91F78600478D2E /* AppDelegate.h */,
 				32E3FB181C91F78600478D2E /* AppDelegate.m */,
 				32E3FB1D1C91F78600478D2E /* Main.storyboard */,
@@ -187,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32A3F1CD1C956ED40070C981 /* InitialRequestStrings.txt in Resources */,
 				32E3FB241C91F78600478D2E /* LaunchScreen.storyboard in Resources */,
 				32E3FB211C91F78600478D2E /* Assets.xcassets in Resources */,
 				32E3FB1F1C91F78600478D2E /* Main.storyboard in Resources */,
@@ -205,6 +248,9 @@
 				32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */,
 				32E3FB161C91F78600478D2E /* main.m in Sources */,
 				32E3FB351C920AB500478D2E /* RHIRequestManager.m in Sources */,
+				32A3F1D01C95A3A50070C981 /* NSObject+BackgroundOperation.m in Sources */,
+				32A3F1C51C9569940070C981 /* RHIViewController+InitialImages.m in Sources */,
+				32A3F1D31C95A5F70070C981 /* UIViewController+Alerts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

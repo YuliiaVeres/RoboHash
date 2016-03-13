@@ -12,6 +12,7 @@
 
 + (instancetype)sharedInstance;
 
-- (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(UIImage *, NSString *))completion;
+- (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSString *))completion;
+- (void)downloadRobotImageForString:(NSString *)requestString;
 
 @end

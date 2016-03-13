@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+Alerts.h"
 
 @interface RHIViewController : UIViewController
 

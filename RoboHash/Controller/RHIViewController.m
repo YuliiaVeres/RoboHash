@@ -9,6 +9,7 @@
 #import "RHIViewController.h"
 #import "RHIConstants.h"
 #import "RHIRequestManager.h"
+#import "RHIViewController+InitialImages.h"
 
 @interface RHIViewController ()
 
@@ -30,6 +31,8 @@
     
     self.cache = [NSCache new];
     self.currentTime = [NSDate date];
+    
+    [self trackInitialLaunch];
 }
 
 #pragma mark - Timer related
@@ -48,33 +51,57 @@
 
 - (void)obtainRobotForString:(NSString *)requestString
 {
+    BOOL loadedAsInitialImage = [[NSUserDefaults standardUserDefaults] boolForKey:requestString];
+    
     UIImage *cachedImage = [self.cache objectForKey:requestString];
     if (cachedImage)
-    {
-        NSLog(@"Retrieving image from cache for: %@", requestString);
-        
         self.robotImageView.image = cachedImage;
-        return;
-    }
-    
-    NSLog(@"Obtaining image for : %@", requestString);
-    
-    [self.activityIndicator startAnimating];
+    else if (loadedAsInitialImage)
+        [self loadInitialImageWithName:requestString];
+    else
+        [self fireRequestFor:requestString];
+}
+
+- (void)loadInitialImageWithName:(NSString *)imageName
+{
+    NSLog(@"Loading image from directory : %@", imageName);
     
     __weak __typeof(self)weakSelf = self;
     
-    [[RHIRequestManager sharedInstance] obtainRobotImageForString:requestString withCompletion:^(UIImage *robotImage, NSString *robotString) {
+    NSDate *hey = [NSDate date];
+    
+    [self loadImageFromDirectoryForString:imageName withCompletion:^(UIImage *loadedImage) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"Time passed for load : %f", [hey timeIntervalSinceNow]);
+            
+            typeof(weakSelf)strongSelf = weakSelf;
+            strongSelf.robotImageView.image = loadedImage;
+        });
+    }];
+}
+
+- (void)fireRequestFor:(NSString *)requestString
+{
+    NSLog(@"Obtaining image for : %@", requestString);
+    [self.activityIndicator startAnimating];
+    
+    __weak typeof(self)weakSelf = self;
+    
+    [[RHIRequestManager sharedInstance] obtainRobotImageForString:requestString withCompletion:^(NSData *imageData, NSString *robotString) {
         
         typeof(weakSelf)strongSelf = weakSelf;
-        [strongSelf.cache setObject:robotImage forKey:robotString];
         
-        if (![robotString isEqualToString:strongSelf.robotTextField.text] && robotImage)
-            return;
+        UIImage *robotImage = [UIImage imageWithData:imageData];
+        [strongSelf.cache setObject:robotImage forKey:robotString];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [strongSelf.activityIndicator stopAnimating];
-            strongSelf.robotImageView.image = robotImage;
+            
+            if ([robotString isEqualToString:strongSelf.robotTextField.text])
+                strongSelf.robotImageView.image = robotImage;
         });
     }];
 }

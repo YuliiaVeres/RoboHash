@@ -9,4 +9,12 @@
 #import "RHIConstants.h"
 
 NSString * const RHIBaseUrl = @"https://robohash.org/";
+NSString * const RHIInitiallyLaunched = @"RHI.AppInitiallyLaunched";
+NSString * const RHISringsFileName = @"InitialRequestStrings";
+
 CGFloat const RHIMinimumTypeInterval = 0.7;
+
+#pragma mark - Alerts related strings
+
+NSString * const RHIStringsFileErrorMessage = @"Can't read strings";
+
