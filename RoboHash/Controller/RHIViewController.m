@@ -9,7 +9,7 @@
 #import "RHIViewController.h"
 #import "RHIConstants.h"
 #import "RHIRequestManager.h"
-#import "RHIViewController+InitialImages.h"
+#import "RHIDirectoryManager.h"
 
 @interface RHIViewController ()
 
@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) NSCache *cache;
-@property (strong, nonatomic) NSDate *currentTime;
+@property (nonatomic, strong) RHIDirectoryManager *directoryManager;
 @property (strong, nonatomic) NSTimer *inputTimer;
 
 @end
@@ -30,9 +30,7 @@
     [super viewDidLoad];
     
     self.cache = [NSCache new];
-    self.currentTime = [NSDate date];
-    
-    [self trackInitialLaunch];
+    self.directoryManager = [RHIDirectoryManager new];
 }
 
 #pragma mark - Timer related
@@ -51,35 +49,15 @@
 
 - (void)obtainRobotForString:(NSString *)requestString
 {
-    BOOL loadedAsInitialImage = [[NSUserDefaults standardUserDefaults] boolForKey:requestString];
+    UIImage *savedImage = [self.directoryManager loadFileWithName:requestString];
     
     UIImage *cachedImage = [self.cache objectForKey:requestString];
     if (cachedImage)
         self.robotImageView.image = cachedImage;
-    else if (loadedAsInitialImage)
-        [self loadInitialImageWithName:requestString];
+    else if (savedImage)
+        self.robotImageView.image = savedImage;
     else
         [self fireRequestFor:requestString];
-}
-
-- (void)loadInitialImageWithName:(NSString *)imageName
-{
-    NSLog(@"Loading image from directory : %@", imageName);
-    
-    __weak __typeof(self)weakSelf = self;
-    
-    NSDate *hey = [NSDate date];
-    
-    [self loadImageFromDirectoryForString:imageName withCompletion:^(UIImage *loadedImage) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSLog(@"Time passed for load : %f", [hey timeIntervalSinceNow]);
-            
-            typeof(weakSelf)strongSelf = weakSelf;
-            strongSelf.robotImageView.image = loadedImage;
-        });
-    }];
 }
 
 - (void)fireRequestFor:(NSString *)requestString
@@ -93,12 +71,12 @@
         
         typeof(weakSelf)strongSelf = weakSelf;
         
-        UIImage *robotImage = [UIImage imageWithData:imageData];
-        [strongSelf.cache setObject:robotImage forKey:robotString];
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [strongSelf.activityIndicator stopAnimating];
+            
+            UIImage *robotImage = [UIImage imageWithData:imageData];
+            [strongSelf.cache setObject:robotImage forKey:robotString];
             
             if ([robotString isEqualToString:strongSelf.robotTextField.text])
                 strongSelf.robotImageView.image = robotImage;
@@ -110,8 +88,6 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    self.currentTime = [NSDate date];
-    
     [self.inputTimer invalidate];
     self.inputTimer = [NSTimer scheduledTimerWithTimeInterval:RHIMinimumTypeInterval target:self selector:@selector(sendFinalRequest:) userInfo:nil repeats:NO];
     

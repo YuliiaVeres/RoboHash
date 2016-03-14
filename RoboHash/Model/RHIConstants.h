@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 extern NSString * const RHIBaseUrl;
-extern NSString * const RHIInitiallyLaunched;
 extern NSString * const RHISringsFileName;
 
 extern CGFloat const RHIMinimumTypeInterval;

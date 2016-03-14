@@ -7,17 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "RHIDirectoryManager.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) RHIDirectoryManager *directoryManager;
 
 @end
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [self loadInitialImages];
+    
     return YES;
+}
+
+- (void)loadInitialImages
+{
+    self.directoryManager = [RHIDirectoryManager new];
+    [self.directoryManager checkForInitialImages];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

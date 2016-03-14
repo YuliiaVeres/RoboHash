@@ -38,10 +38,8 @@
     }] resume];
 }
 
-- (void)downloadRobotImageForString:(NSString *)requestString
+- (void)downloadRobotImageForString:(NSString *)requestString handler:(void(^)(NSURL *))handler
 {
-    NSLog(@"Writing to directory image named %@", requestString);
-    
     NSString *requestUrlString = [NSString stringWithFormat:@"%@%@", RHIBaseUrl, requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrlString]];
     
@@ -50,15 +48,9 @@
                     completionHandler:
       ^(NSURL *location, NSURLResponse *response, NSError *error) {
           
-          NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-          NSURL *documentsDirectoryURL = [NSURL fileURLWithPath:documentsPath];
+          if (handler)
+              handler(location);
           
-          NSURL *documentURL = [documentsDirectoryURL URLByAppendingPathComponent:[response
-                                                                                   suggestedFilename]];
-          [[NSFileManager defaultManager] moveItemAtURL:location toURL:documentURL error:nil];
-          
-          [[NSUserDefaults standardUserDefaults] setBool:YES forKey:requestString];
-          [[NSUserDefaults standardUserDefaults] synchronize];
       }] resume];
 }
 
