@@ -21,7 +21,7 @@
 
 - (id)init
 {
-    if (self == [super init])
+    if (self = [super init])
     {
         self.downloadQueue = [NSOperationQueue new];
         self.downloadQueue.maxConcurrentOperationCount = 5;
@@ -33,7 +33,7 @@
 
 - (void)downloadImage:(NSString *)imageName
 {
-   // RHIDownloadOperation *downloadOperation = [[RHIDownloadOperation alloc] initWithImageName:imageName];
+    //  RHIDownloadOperation *downloadOperation = [[RHIDownloadOperation alloc] initWithImageName:imageName];
     
     NSBlockOperation *downloadOperation = [NSBlockOperation new];
     __weak __typeof(downloadOperation)weakOperation = downloadOperation;
@@ -44,8 +44,6 @@
         if (!strongOperation.isCancelled)
         {
             [[RHIRequestManager sharedInstance] downloadRobotImageForString:imageName handler:^(NSURL *tempLocation) {
-                
-                NSLog(@"Cancelled : %@", @(strongOperation.isCancelled));
                 
                 if (!strongOperation.isCancelled)
                 {

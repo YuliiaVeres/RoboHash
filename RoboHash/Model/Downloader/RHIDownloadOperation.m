@@ -20,7 +20,7 @@
 
 - (id)initWithImageName:(NSString *)imageName
 {
-    if (self == [super init])
+    if (self = [super init])
     {
         self.imageName = imageName;
     }

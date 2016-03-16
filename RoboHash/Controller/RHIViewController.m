@@ -8,8 +8,7 @@
 
 #import "RHIViewController.h"
 #import "RHIConstants.h"
-#import "RHIRequestManager.h"
-#import "RHIDirectoryManager.h"
+#import "RHIHashDataSource.h"
 
 @interface RHIViewController ()
 
@@ -17,8 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *robotTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-@property (strong, nonatomic) NSCache *cache;
-@property (nonatomic, strong) RHIDirectoryManager *directoryManager;
+@property (strong, nonatomic) RHIHashDataSource *hashDataSource;
 @property (strong, nonatomic) NSTimer *inputTimer;
 
 @end
@@ -29,8 +27,7 @@
 {
     [super viewDidLoad];
     
-    self.cache = [NSCache new];
-    self.directoryManager = [RHIDirectoryManager new];
+    self.hashDataSource = [RHIHashDataSource new];
 }
 
 #pragma mark - Timer related
@@ -49,38 +46,20 @@
 
 - (void)obtainRobotForString:(NSString *)requestString
 {
-    UIImage *savedImage = [self.directoryManager loadFileWithName:requestString];
-    
-    UIImage *cachedImage = [self.cache objectForKey:requestString];
-    if (cachedImage)
-        self.robotImageView.image = cachedImage;
-    else if (savedImage)
-        self.robotImageView.image = savedImage;
-    else
-        [self fireRequestFor:requestString];
-}
-
-- (void)fireRequestFor:(NSString *)requestString
-{
-    NSLog(@"Obtaining image for : %@", requestString);
     [self.activityIndicator startAnimating];
     
-    __weak typeof(self)weakSelf = self;
+    __weak typeof (self)weakSelf = self;
     
-    [[RHIRequestManager sharedInstance] obtainRobotImageForString:requestString withCompletion:^(NSData *imageData, NSString *robotString) {
+    [self.hashDataSource loadFileNamed:requestString withCompletion:^(UIImage *image, NSString *requestedString) {
         
-        typeof(weakSelf)strongSelf = weakSelf;
+        typeof (weakSelf)strongSelf = weakSelf;
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [strongSelf.activityIndicator stopAnimating];
-            
-            UIImage *robotImage = [UIImage imageWithData:imageData];
-            [strongSelf.cache setObject:robotImage forKey:robotString];
-            
-            if ([robotString isEqualToString:strongSelf.robotTextField.text])
-                strongSelf.robotImageView.image = robotImage;
-        });
+        [strongSelf.activityIndicator stopAnimating];
+        
+        if (![strongSelf.robotTextField.text isEqualToString:requestString])
+            return;
+        
+        strongSelf.robotImageView.image = image;
     }];
 }
 

@@ -13,7 +13,6 @@
 @interface RHIDirectoryManager()
 
 @property (nonatomic, strong) NSOperationQueue *fileTaskQueue;
-@property (nonatomic, strong) NSCache *cache;
 
 @end
 
@@ -21,13 +20,11 @@
 
 - (id)init
 {
-    if (self == [super init])
+    if (self = [super init])
     {
         self.fileTaskQueue = [NSOperationQueue new];
         self.fileTaskQueue.maxConcurrentOperationCount = 1;
         self.fileTaskQueue.name = @"File Task Queue";
-        
-        self.cache = [NSCache new];
         
         return self;
     }
@@ -68,24 +65,9 @@
     [self.fileTaskQueue addOperation:readOperation];
 }
 
-- (UIImage *)loadFileWithName:(NSString *)fileName
-{
-    NSURL *filePath = [self pathForFileWithName:fileName];
-    
-    UIImage *cachedImage = [self.cache objectForKey:filePath];
-    if (cachedImage)
-        return cachedImage;
-    
-    UIImage *loadedImage = [UIImage imageWithContentsOfFile:[filePath path]];
-    if (loadedImage)
-        [self.cache setObject:loadedImage forKey:filePath];
-    
-    return loadedImage;
-}
-
 - (void)saveDocumentWithName:(NSString *)name fromTempLocation:(NSURL *)location
 {
-    NSLog(@"Writing to directory image named %@", name);
+    NSLog(@" --- Writing to directory image named %@ \n", name);
     
     NSURL *documentURL = [self pathForFileWithName:name];
     [[NSFileManager defaultManager] moveItemAtURL:location toURL:documentURL error:nil];
