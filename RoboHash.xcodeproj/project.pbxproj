@@ -13,6 +13,7 @@
 		32A3F1D71C96111F0070C981 /* RHIDirectoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1D61C96111F0070C981 /* RHIDirectoryManager.m */; };
 		32A3F1DB1C9626C80070C981 /* RHIDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1DA1C9626C80070C981 /* RHIDownloader.m */; };
 		32A3F1DE1C9632890070C981 /* RHIDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1DD1C9632890070C981 /* RHIDownloadOperation.m */; };
+		32B5D8E71C9B0BE000B6601F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B5D8E61C9B0BE000B6601F /* Reachability.m */; };
 		32E3FB161C91F78600478D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB151C91F78600478D2E /* main.m */; };
 		32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB181C91F78600478D2E /* AppDelegate.m */; };
 		32E3FB1F1C91F78600478D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB1D1C91F78600478D2E /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 		32A3F1DA1C9626C80070C981 /* RHIDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIDownloader.m; path = Model/Downloader/RHIDownloader.m; sourceTree = "<group>"; };
 		32A3F1DC1C9632890070C981 /* RHIDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIDownloadOperation.h; path = Model/Downloader/RHIDownloadOperation.h; sourceTree = "<group>"; };
 		32A3F1DD1C9632890070C981 /* RHIDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIDownloadOperation.m; path = Model/Downloader/RHIDownloadOperation.m; sourceTree = "<group>"; };
+		32B5D8E51C9B0BE000B6601F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = 3dParty/Reachability/Reachability.h; sourceTree = "<group>"; };
+		32B5D8E61C9B0BE000B6601F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = 3dParty/Reachability/Reachability.m; sourceTree = "<group>"; };
 		32E3FB111C91F78600478D2E /* RoboHash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboHash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E3FB151C91F78600478D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32E3FB171C91F78600478D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,6 +119,23 @@
 			name = Downloader;
 			sourceTree = "<group>";
 		};
+		32B5D8E31C9B0BCE00B6601F /* 3dParty */ = {
+			isa = PBXGroup;
+			children = (
+				32B5D8E41C9B0BD500B6601F /* Reachability */,
+			);
+			name = 3dParty;
+			sourceTree = "<group>";
+		};
+		32B5D8E41C9B0BD500B6601F /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				32B5D8E51C9B0BE000B6601F /* Reachability.h */,
+				32B5D8E61C9B0BE000B6601F /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		32E3FB081C91F78600478D2E = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +155,7 @@
 		32E3FB131C91F78600478D2E /* RoboHash */ = {
 			isa = PBXGroup;
 			children = (
+				32B5D8E31C9B0BCE00B6601F /* 3dParty */,
 				32A3F1C21C9569700070C981 /* Categories */,
 				32E3FB2D1C91F7F100478D2E /* Controller */,
 				32E3FB2C1C91F7E800478D2E /* View */,
@@ -280,6 +301,7 @@
 				32A3F1D71C96111F0070C981 /* RHIDirectoryManager.m in Sources */,
 				32E3FB301C92027F00478D2E /* RHIConstants.m in Sources */,
 				32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */,
+				32B5D8E71C9B0BE000B6601F /* Reachability.m in Sources */,
 				32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */,
 				323226361C98B30600E620D1 /* RHIHashDataSource.m in Sources */,
 				32A3F1DB1C9626C80070C981 /* RHIDownloader.m in Sources */,

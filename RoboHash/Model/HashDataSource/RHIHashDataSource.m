@@ -51,8 +51,7 @@
 
 - (void)requestNotCachedImageNamed:(NSString *)name withCompletion:(void(^)(UIImage *, NSString *))completion
 {
-    RHIDirectoryManager *directoryManager = [RHIDirectoryManager new];
-    NSURL *filePath = [directoryManager pathForFileWithName:name];
+    NSURL *filePath = [RHIDirectoryManager pathForFileWithName:name];
     
     UIImage *directoryImage = [UIImage imageWithContentsOfFile:[filePath path]];
     if (directoryImage && completion)

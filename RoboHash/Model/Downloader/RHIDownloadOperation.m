@@ -14,9 +14,15 @@
 
 @property (nonatomic, strong) NSString *imageName;
 
+@property (readwrite, nonatomic, getter = isExecuting) BOOL executing;
+@property (readwrite, nonatomic, getter = isFinished) BOOL finished;
+
 @end
 
 @implementation RHIDownloadOperation
+
+@synthesize executing;
+@synthesize finished;
 
 - (id)initWithImageName:(NSString *)imageName
 {
@@ -28,10 +34,17 @@
     return self;
 }
 
+- (void)start
+{
+    if (!self.isCancelled)
+        [self main];
+    else
+        [self finishWork];
+}
+
 - (void)main
 {
-    if (self.isCancelled)
-        return;
+    NSLog(@"\n ---> Started operation for image named: %@ \n", self.imageName);
     
     __weak typeof(self)weakSelf = self;
     
@@ -39,12 +52,41 @@
         
         typeof(weakSelf)strongSelf = weakSelf;
         
-        if (!strongSelf.isCancelled)
+        if (!strongSelf.isCancelled && tempLocation)
         {
-            RHIDirectoryManager *directoryManager = [RHIDirectoryManager new];
-            [directoryManager saveDocumentWithName:strongSelf.imageName fromTempLocation:tempLocation];
+            [RHIDirectoryManager saveDocumentWithName:strongSelf.imageName fromTempLocation:tempLocation];
+            
+            NSLog(@"\n +++ Operation finished for image named: %@.", strongSelf.imageName);
         }
+        
+        [strongSelf finishWork];
     }];
+}
+
+- (void)startWork
+{
+    [self willChangeValueForKey:NSStringFromSelector(@selector(isExecuting))];
+    
+    self.executing = YES;
+    
+    [self didChangeValueForKey:NSStringFromSelector(@selector(isExecuting))];
+}
+
+- (void)finishWork
+{
+    [self willChangeValueForKey:NSStringFromSelector(@selector(isFinished))];
+    [self willChangeValueForKey:NSStringFromSelector(@selector(isExecuting))];
+    
+    self.finished = YES;
+    self.executing = NO;
+    
+    [self didChangeValueForKey:NSStringFromSelector(@selector(isFinished))];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(isExecuting))];
+}
+
+- (void)dealloc
+{
+    NSLog(@"\n\n  *** Operation deallocated for image named : %@ \n", self.imageName);
 }
 
 @end

@@ -10,6 +10,12 @@
 #import "RHIRequestManager.h"
 #import "RHIConstants.h"
 
+@interface RHIRequestManager ()
+
+@property (nonatomic, strong) NSURLSessionDataTask *imageObtainTask;
+
+@end
+
 @implementation RHIRequestManager
 
 + (id)sharedInstance
@@ -29,13 +35,16 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrlString]];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [self.imageObtainTask cancel];
+    
+    self.imageObtainTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSString *requestedRobot = response.URL.pathComponents.lastObject;
         
         if (completion)
             completion(data, requestedRobot);
-    }] resume];
+    }];
+    [self.imageObtainTask resume];
 }
 
 - (void)downloadRobotImageForString:(NSString *)requestString handler:(void(^)(NSURL *))handler

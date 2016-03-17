@@ -11,6 +11,7 @@
 
 extern NSString * const RHIBaseUrl;
 extern NSString * const RHISringsFileName;
+extern NSString * const RHIReachabilityHostName;
 
 extern CGFloat const RHIMinimumTypeInterval;
 

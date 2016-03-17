@@ -11,8 +11,8 @@
 
 @interface RHIDirectoryManager : NSObject
 
-- (NSURL *)pathForFileWithName:(NSString *)fileName;
-- (void)saveDocumentWithName:(NSString *)name fromTempLocation:(NSURL *)location;;
++ (NSURL *)pathForFileWithName:(NSString *)fileName;
++ (void)saveDocumentWithName:(NSString *)name fromTempLocation:(NSURL *)location;;
 - (void)checkForInitialImages;
 
 @end

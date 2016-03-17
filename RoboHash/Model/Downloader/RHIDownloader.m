@@ -33,26 +33,7 @@
 
 - (void)downloadImage:(NSString *)imageName
 {
-    //  RHIDownloadOperation *downloadOperation = [[RHIDownloadOperation alloc] initWithImageName:imageName];
-    
-    NSBlockOperation *downloadOperation = [NSBlockOperation new];
-    __weak __typeof(downloadOperation)weakOperation = downloadOperation;
-    
-    [downloadOperation addExecutionBlock:^{
-        
-        typeof (weakOperation)strongOperation = weakOperation;
-        if (!strongOperation.isCancelled)
-        {
-            [[RHIRequestManager sharedInstance] downloadRobotImageForString:imageName handler:^(NSURL *tempLocation) {
-                
-                if (!strongOperation.isCancelled)
-                {
-                    RHIDirectoryManager *directoryManager = [RHIDirectoryManager new];
-                    [directoryManager saveDocumentWithName:imageName fromTempLocation:tempLocation];
-                }
-            }];
-        }
-    }];
+    RHIDownloadOperation *downloadOperation = [[RHIDownloadOperation alloc] initWithImageName:imageName];
     
     [self.downloadQueue addOperation:downloadOperation];
 }
