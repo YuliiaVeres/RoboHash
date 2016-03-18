@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		323226361C98B30600E620D1 /* RHIHashDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 323226351C98B30600E620D1 /* RHIHashDataSource.m */; };
+		328DB29E1C9B7B2400C09A00 /* NSString+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 328DB29D1C9B7B2400C09A00 /* NSString+Random.m */; };
+		328DB2A21C9B858800C09A00 /* RHIImageProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 328DB2A11C9B858800C09A00 /* RHIImageProxy.m */; };
+		329AE9321C9BF82C00C2FB6C /* RHIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 329AE9311C9BF82C00C2FB6C /* RHIRequestManager.m */; };
 		32A3F1CD1C956ED40070C981 /* InitialRequestStrings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32A3F1CC1C956ED40070C981 /* InitialRequestStrings.txt */; };
 		32A3F1D31C95A5F70070C981 /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1D21C95A5F70070C981 /* UIViewController+Alerts.m */; };
 		32A3F1D71C96111F0070C981 /* RHIDirectoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1D61C96111F0070C981 /* RHIDirectoryManager.m */; };
@@ -20,13 +23,18 @@
 		32E3FB211C91F78600478D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB201C91F78600478D2E /* Assets.xcassets */; };
 		32E3FB241C91F78600478D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB221C91F78600478D2E /* LaunchScreen.storyboard */; };
 		32E3FB301C92027F00478D2E /* RHIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB2F1C92027F00478D2E /* RHIConstants.m */; };
-		32E3FB351C920AB500478D2E /* RHIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB341C920AB500478D2E /* RHIRequestManager.m */; };
 		32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB371C921A1E00478D2E /* RHIViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		323226341C98B30600E620D1 /* RHIHashDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIHashDataSource.h; path = Model/HashDataSource/RHIHashDataSource.h; sourceTree = "<group>"; };
 		323226351C98B30600E620D1 /* RHIHashDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIHashDataSource.m; path = Model/HashDataSource/RHIHashDataSource.m; sourceTree = "<group>"; };
+		328DB29C1C9B7B2400C09A00 /* NSString+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Random.h"; path = "Categories/NSString+Random.h"; sourceTree = "<group>"; };
+		328DB29D1C9B7B2400C09A00 /* NSString+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Random.m"; path = "Categories/NSString+Random.m"; sourceTree = "<group>"; };
+		328DB2A01C9B858800C09A00 /* RHIImageProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIImageProxy.h; path = Model/ImageProxy/RHIImageProxy.h; sourceTree = "<group>"; };
+		328DB2A11C9B858800C09A00 /* RHIImageProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIImageProxy.m; path = Model/ImageProxy/RHIImageProxy.m; sourceTree = "<group>"; };
+		329AE9301C9BF82C00C2FB6C /* RHIRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIRequestManager.h; path = Model/RequestManager/RHIRequestManager.h; sourceTree = "<group>"; };
+		329AE9311C9BF82C00C2FB6C /* RHIRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIRequestManager.m; path = Model/RequestManager/RHIRequestManager.m; sourceTree = "<group>"; };
 		32A3F1CC1C956ED40070C981 /* InitialRequestStrings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = InitialRequestStrings.txt; path = Resources/InitialStrings/InitialRequestStrings.txt; sourceTree = "<group>"; };
 		32A3F1D11C95A5F70070C981 /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Alerts.h"; path = "Categories/UIViewController+Alerts.h"; sourceTree = "<group>"; };
 		32A3F1D21C95A5F70070C981 /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Alerts.m"; path = "Categories/UIViewController+Alerts.m"; sourceTree = "<group>"; };
@@ -48,8 +56,6 @@
 		32E3FB251C91F78600478D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E3FB2E1C92027F00478D2E /* RHIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIConstants.h; path = Model/RHIConstants.h; sourceTree = "<group>"; };
 		32E3FB2F1C92027F00478D2E /* RHIConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIConstants.m; path = Model/RHIConstants.m; sourceTree = "<group>"; };
-		32E3FB331C920AB500478D2E /* RHIRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIRequestManager.h; path = Model/RHIRequestManager.h; sourceTree = "<group>"; };
-		32E3FB341C920AB500478D2E /* RHIRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIRequestManager.m; path = Model/RHIRequestManager.m; sourceTree = "<group>"; };
 		32E3FB361C921A1E00478D2E /* RHIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIViewController.h; path = Controller/RHIViewController.h; sourceTree = "<group>"; };
 		32E3FB371C921A1E00478D2E /* RHIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIViewController.m; path = Controller/RHIViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,11 +80,22 @@
 			name = HashDataSource;
 			sourceTree = "<group>";
 		};
+		328DB29F1C9B855700C09A00 /* ImageProxy */ = {
+			isa = PBXGroup;
+			children = (
+				328DB2A01C9B858800C09A00 /* RHIImageProxy.h */,
+				328DB2A11C9B858800C09A00 /* RHIImageProxy.m */,
+			);
+			name = ImageProxy;
+			sourceTree = "<group>";
+		};
 		32A3F1C21C9569700070C981 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				32A3F1D11C95A5F70070C981 /* UIViewController+Alerts.h */,
 				32A3F1D21C95A5F70070C981 /* UIViewController+Alerts.m */,
+				328DB29C1C9B7B2400C09A00 /* NSString+Random.h */,
+				328DB29D1C9B7B2400C09A00 /* NSString+Random.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -183,6 +200,7 @@
 		32E3FB2B1C91F7E300478D2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				328DB29F1C9B855700C09A00 /* ImageProxy */,
 				323226331C98B2DD00E620D1 /* HashDataSource */,
 				32A3F1D81C9626A00070C981 /* Downloader */,
 				32A3F1D41C9610FE0070C981 /* DirectoryLayer */,
@@ -220,8 +238,8 @@
 		32E3FB321C920A7F00478D2E /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				32E3FB331C920AB500478D2E /* RHIRequestManager.h */,
-				32E3FB341C920AB500478D2E /* RHIRequestManager.m */,
+				329AE9301C9BF82C00C2FB6C /* RHIRequestManager.h */,
+				329AE9311C9BF82C00C2FB6C /* RHIRequestManager.m */,
 			);
 			name = NetworkLayer;
 			sourceTree = "<group>";
@@ -300,13 +318,15 @@
 			files = (
 				32A3F1D71C96111F0070C981 /* RHIDirectoryManager.m in Sources */,
 				32E3FB301C92027F00478D2E /* RHIConstants.m in Sources */,
+				328DB2A21C9B858800C09A00 /* RHIImageProxy.m in Sources */,
+				329AE9321C9BF82C00C2FB6C /* RHIRequestManager.m in Sources */,
+				328DB29E1C9B7B2400C09A00 /* NSString+Random.m in Sources */,
 				32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */,
 				32B5D8E71C9B0BE000B6601F /* Reachability.m in Sources */,
 				32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */,
 				323226361C98B30600E620D1 /* RHIHashDataSource.m in Sources */,
 				32A3F1DB1C9626C80070C981 /* RHIDownloader.m in Sources */,
 				32E3FB161C91F78600478D2E /* main.m in Sources */,
-				32E3FB351C920AB500478D2E /* RHIRequestManager.m in Sources */,
 				32A3F1DE1C9632890070C981 /* RHIDownloadOperation.m in Sources */,
 				32A3F1D31C95A5F70070C981 /* UIViewController+Alerts.m in Sources */,
 			);

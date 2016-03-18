@@ -13,6 +13,8 @@ NSString * const RHISringsFileName = @"InitialRequestStrings";
 NSString * const RHIReachabilityHostName = @"https://apple.com";
 
 CGFloat const RHIMinimumTypeInterval = 0.7;
+CGFloat const RHIHashGenerateInterval = 15.0;
+NSInteger const RHIMaxRandomStringLength = 15;
 
 #pragma mark - Alerts related strings
 

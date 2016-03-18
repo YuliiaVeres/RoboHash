@@ -14,6 +14,8 @@ extern NSString * const RHISringsFileName;
 extern NSString * const RHIReachabilityHostName;
 
 extern CGFloat const RHIMinimumTypeInterval;
+extern CGFloat const RHIHashGenerateInterval;
+extern NSInteger const RHIMaxRandomStringLength;
 
 #pragma mark - Alerts related strings
 

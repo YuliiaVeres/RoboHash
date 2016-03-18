@@ -48,7 +48,7 @@
     
     __weak typeof(self)weakSelf = self;
     
-    [[RHIRequestManager sharedInstance] downloadRobotImageForString:self.imageName handler:^(NSURL *tempLocation) {
+    [[RHIRequestManager new] downloadRobotImageForString:self.imageName handler:^(NSURL *tempLocation) {
         
         typeof(weakSelf)strongSelf = weakSelf;
         

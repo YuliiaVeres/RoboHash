@@ -18,19 +18,10 @@
 
 @implementation RHIRequestManager
 
-+ (id)sharedInstance
-{
-    static dispatch_once_t once;
-    static RHIRequestManager *sharedInstance = nil;
-    
-    dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
-    });
-    return sharedInstance;
-}
-
 - (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSString *))completion
 {
+    NSLog(@"OBTAINING IMAGE FOR %@ \n via manager: %@", requestString, self);
+    
     NSString *requestUrlString = [NSString stringWithFormat:@"%@%@", RHIBaseUrl, requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrlString]];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];

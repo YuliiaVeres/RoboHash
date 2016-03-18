@@ -30,7 +30,7 @@
 
 #pragma mark - Load File
 
-- (void)loadFileNamed:(NSString *)name withCompletion:(void (^)(UIImage *, NSString *))completion
+- (void)loadFileNamed:(NSString *)name withRequestManager:(RHIRequestManager *)requestManager withCompletion:(void (^)(UIImage *, NSString *))completion
 {
     UIImage *cachedImage = [self.cache objectForKey:[name uppercaseString]];
     if (cachedImage && completion)
@@ -40,7 +40,7 @@
         return;
     }
     
-    [self requestNotCachedImageNamed:name withCompletion:^(UIImage *image, NSString *requestedName) {
+    [self requestNotCachedImageNamed:name requestManager:requestManager withCompletion:^(UIImage *image, NSString *requestedName) {
         
         if (completion)
             completion(image, requestedName);
@@ -49,7 +49,7 @@
 
 #pragma mark - Fetch image from Web or Directory
 
-- (void)requestNotCachedImageNamed:(NSString *)name withCompletion:(void(^)(UIImage *, NSString *))completion
+- (void)requestNotCachedImageNamed:(NSString *)name requestManager:(RHIRequestManager *)requestManager withCompletion:(void(^)(UIImage *, NSString *))completion
 {
     NSURL *filePath = [RHIDirectoryManager pathForFileWithName:name];
     
@@ -65,7 +65,7 @@
     
     __weak typeof(self)weakSelf = self;
     
-    [[RHIRequestManager sharedInstance] obtainRobotImageForString:name withCompletion:^(NSData *imageData, NSString *requestedString) {
+    [requestManager obtainRobotImageForString:name withCompletion:^(NSData *imageData, NSString *requestedString) {
         
         typeof(weakSelf)strongSelf = weakSelf;
         

@@ -10,8 +10,6 @@
 
 @interface RHIRequestManager : NSObject
 
-+ (instancetype)sharedInstance;
-
 - (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSString *))completion;
 - (void)downloadRobotImageForString:(NSString *)requestString handler:(void(^)(NSURL *))handler;
 

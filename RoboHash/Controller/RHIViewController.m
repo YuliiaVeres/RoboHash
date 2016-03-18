@@ -8,15 +8,18 @@
 
 #import "RHIViewController.h"
 #import "RHIConstants.h"
-#import "RHIHashDataSource.h"
+#import "RHIImageProxy.h"
 
 @interface RHIViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *robotImageView;
 @property (weak, nonatomic) IBOutlet UITextField *robotTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *demoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *demoLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *demoActivityIndicator;
 
-@property (strong, nonatomic) RHIHashDataSource *hashDataSource;
+@property (strong, nonatomic) RHIImageProxy *imageProxy;
 @property (strong, nonatomic) NSTimer *inputTimer;
 
 @end
@@ -27,7 +30,54 @@
 {
     [super viewDidLoad];
     
-    self.hashDataSource = [RHIHashDataSource new];
+    self.imageProxy = [RHIImageProxy new];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self startDemo];
+}
+
+- (void)startDemo
+{
+    [self.imageProxy addObserver:self forKeyPath:NSStringFromSelector(@selector(randomString)) options:NSKeyValueObservingOptionNew context:nil];
+    [self.imageProxy addObserver:self forKeyPath:NSStringFromSelector(@selector(randomImage)) options:NSKeyValueObservingOptionNew context:nil];
+    
+    [self.imageProxy startGenerating];
+}
+
+- (void)dealloc
+{
+    [self.imageProxy removeObserver:self forKeyPath:NSStringFromSelector(@selector(randomString))];
+    [self.imageProxy removeObserver:self forKeyPath:NSStringFromSelector(@selector(randomImage))];
+    [self.imageProxy stopGenerating];
+}
+
+#pragma mark - Random results observing and procassing
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if (object != self.imageProxy)
+        return;
+    
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(randomString))])
+        [self displayStartGeneration];
+    else if ([keyPath isEqualToString:NSStringFromSelector(@selector(randomImage))])
+        [self displayGenerateResult];
+}
+
+- (void)displayStartGeneration
+{
+    [self.demoActivityIndicator startAnimating];
+    self.demoImageView.image = nil;
+    self.demoLabel.text = self.imageProxy.randomString;
+}
+
+- (void)displayGenerateResult
+{
+    [self.demoActivityIndicator stopAnimating];
+    self.demoImageView.image = self.imageProxy.randomImage;
 }
 
 #pragma mark - Timer related
@@ -50,10 +100,9 @@
     
     __weak typeof (self)weakSelf = self;
     
-    [self.hashDataSource loadFileNamed:requestString withCompletion:^(UIImage *image, NSString *requestedString) {
-        
+    [self.imageProxy requestImageNamed:requestString withCompletion:^(UIImage *image, NSString *requestString) {
+       
         typeof (weakSelf)strongSelf = weakSelf;
-        
         [strongSelf.activityIndicator stopAnimating];
         
         if (![strongSelf.robotTextField.text isEqualToString:requestString])

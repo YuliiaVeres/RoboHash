@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "RHIRequestManager.h"
 
 @interface RHIHashDataSource : NSObject
 
-- (void)loadFileNamed:(NSString *)name withCompletion:(void (^)(UIImage *, NSString *))completion;
+- (void)loadFileNamed:(NSString *)name withRequestManager:(RHIRequestManager *)requestManager withCompletion:(void (^)(UIImage *, NSString *))completion;
 
 @end
