@@ -11,6 +11,7 @@
 NSString * const RHIBaseUrl = @"https://robohash.org/";
 NSString * const RHISringsFileName = @"InitialRequestStrings";
 NSString * const RHIReachabilityHostName = @"https://apple.com";
+NSString * const RHIOfflineIcon = @"Offline";
 
 CGFloat const RHIMinimumTypeInterval = 0.7;
 CGFloat const RHIHashGenerateInterval = 15.0;

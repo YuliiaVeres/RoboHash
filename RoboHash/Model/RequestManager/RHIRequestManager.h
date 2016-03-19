@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, RHIRequestType) {
+    RHIRequestTypeUser,
+    RHIRequestTypeRandom
+};
+
 @interface RHIRequestManager : NSObject
 
 - (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSString *))completion;

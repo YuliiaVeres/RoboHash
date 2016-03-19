@@ -11,8 +11,10 @@
 
 @interface RHIImageProxy : NSObject
 
-@property (nonatomic, strong) UIImage *randomImage;
-@property (nonatomic, strong) NSString *randomString;
+@property (readonly, nonatomic, strong) UIImage *randomImage;
+@property (readonly, nonatomic, strong) NSString *randomString;
+
++ (instancetype)sharedInstance;
 
 - (void)startGenerating;
 - (void)stopGenerating;

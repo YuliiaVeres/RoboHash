@@ -1,16 +1,16 @@
 //
-//  ViewController.m
+//  RHIHashViewController.m
 //  RoboHash
 //
 //  Created by Yuliia Veresklia on 3/10/16.
 //  Copyright © 2016 Yuliia Veresklia. All rights reserved.
 //
 
-#import "RHIViewController.h"
+#import "RHIHashViewController.h"
 #import "RHIConstants.h"
 #import "RHIImageProxy.h"
 
-@interface RHIViewController ()
+@interface RHIHashViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *robotImageView;
 @property (weak, nonatomic) IBOutlet UITextField *robotTextField;
@@ -24,27 +24,31 @@
 
 @end
 
-@implementation RHIViewController
+@implementation RHIHashViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.imageProxy = [RHIImageProxy new];
+    [self setup];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self startDemo];
+    [self.imageProxy startGenerating];
 }
 
-- (void)startDemo
+- (void)setup
 {
+    self.imageProxy = [RHIImageProxy sharedInstance];
     [self.imageProxy addObserver:self forKeyPath:NSStringFromSelector(@selector(randomString)) options:NSKeyValueObservingOptionNew context:nil];
     [self.imageProxy addObserver:self forKeyPath:NSStringFromSelector(@selector(randomImage)) options:NSKeyValueObservingOptionNew context:nil];
-    
-    [self.imageProxy startGenerating];
 }
 
 - (void)dealloc
@@ -54,7 +58,7 @@
     [self.imageProxy stopGenerating];
 }
 
-#pragma mark - Random results observing and procassing
+#pragma mark - Random results observing and processing
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
@@ -101,14 +105,14 @@
     __weak typeof (self)weakSelf = self;
     
     [self.imageProxy requestImageNamed:requestString withCompletion:^(UIImage *image, NSString *requestString) {
-       
+        
         typeof (weakSelf)strongSelf = weakSelf;
         [strongSelf.activityIndicator stopAnimating];
         
-        if (![strongSelf.robotTextField.text isEqualToString:requestString])
+        if (![strongSelf.robotTextField.text isEqualToString:requestString] && requestString)
             return;
         
-        strongSelf.robotImageView.image = image;
+        strongSelf.robotImageView.image = image ?: [UIImage imageNamed:RHIOfflineIcon];
     }];
 }
 

@@ -12,6 +12,7 @@
 extern NSString * const RHIBaseUrl;
 extern NSString * const RHISringsFileName;
 extern NSString * const RHIReachabilityHostName;
+extern NSString * const RHIOfflineIcon;
 
 extern CGFloat const RHIMinimumTypeInterval;
 extern CGFloat const RHIHashGenerateInterval;

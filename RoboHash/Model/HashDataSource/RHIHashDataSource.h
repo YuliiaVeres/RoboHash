@@ -12,6 +12,6 @@
 
 @interface RHIHashDataSource : NSObject
 
-- (void)loadFileNamed:(NSString *)name withRequestManager:(RHIRequestManager *)requestManager withCompletion:(void (^)(UIImage *, NSString *))completion;
+- (void)loadFileNamed:(NSString *)name withRequestManager:(RHIRequestManager *)requestManager requestType:(RHIRequestType)requestType withCompletion:(void (^)(UIImage *, NSString *))completion;
 
 @end

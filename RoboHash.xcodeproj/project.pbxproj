@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		323226361C98B30600E620D1 /* RHIHashDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 323226351C98B30600E620D1 /* RHIHashDataSource.m */; };
+		3250BDC91C9D77DB0039AC7B /* RHIRoboHash+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3250BDC61C9D77DB0039AC7B /* RHIRoboHash+CoreDataProperties.m */; };
+		3250BDCA1C9D77DB0039AC7B /* RHIRoboHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 3250BDC81C9D77DB0039AC7B /* RHIRoboHash.m */; };
+		3250BDCD1C9D8A3A0039AC7B /* UITableViewCell+RoboHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 3250BDCC1C9D8A3A0039AC7B /* UITableViewCell+RoboHash.m */; };
 		328DB29E1C9B7B2400C09A00 /* NSString+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 328DB29D1C9B7B2400C09A00 /* NSString+Random.m */; };
 		328DB2A21C9B858800C09A00 /* RHIImageProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 328DB2A11C9B858800C09A00 /* RHIImageProxy.m */; };
 		329AE9321C9BF82C00C2FB6C /* RHIRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 329AE9311C9BF82C00C2FB6C /* RHIRequestManager.m */; };
@@ -16,6 +19,14 @@
 		32A3F1D71C96111F0070C981 /* RHIDirectoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1D61C96111F0070C981 /* RHIDirectoryManager.m */; };
 		32A3F1DB1C9626C80070C981 /* RHIDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1DA1C9626C80070C981 /* RHIDownloader.m */; };
 		32A3F1DE1C9632890070C981 /* RHIDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3F1DD1C9632890070C981 /* RHIDownloadOperation.m */; };
+		32AEE6321C9C37F400C25BC8 /* RoboHash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE6301C9C37F400C25BC8 /* RoboHash.xcdatamodeld */; };
+		32AEE6381C9C3C2C00C25BC8 /* RHIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE6371C9C3C2C00C25BC8 /* RHIHomeViewController.m */; };
+		32AEE63B1C9C3C5A00C25BC8 /* RHIHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE63A1C9C3C5A00C25BC8 /* RHIHashViewController.m */; };
+		32AEE63E1C9C3DCC00C25BC8 /* RHIHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE63D1C9C3DCC00C25BC8 /* RHIHistoryViewController.m */; };
+		32AEE6411C9C402600C25BC8 /* UIView+Cornered.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE6401C9C402600C25BC8 /* UIView+Cornered.m */; };
+		32AEE6441C9C423700C25BC8 /* UINavigationBar+RoboHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE6431C9C423700C25BC8 /* UINavigationBar+RoboHash.m */; };
+		32AEE64F1C9CC2BF00C25BC8 /* RHICoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE64E1C9CC2BF00C25BC8 /* RHICoreDataManager.m */; };
+		32AEE65F1C9CCA4C00C25BC8 /* RHIHashHistoryStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AEE65E1C9CCA4C00C25BC8 /* RHIHashHistoryStack.m */; };
 		32B5D8E71C9B0BE000B6601F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B5D8E61C9B0BE000B6601F /* Reachability.m */; };
 		32E3FB161C91F78600478D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB151C91F78600478D2E /* main.m */; };
 		32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB181C91F78600478D2E /* AppDelegate.m */; };
@@ -23,12 +34,17 @@
 		32E3FB211C91F78600478D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB201C91F78600478D2E /* Assets.xcassets */; };
 		32E3FB241C91F78600478D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3FB221C91F78600478D2E /* LaunchScreen.storyboard */; };
 		32E3FB301C92027F00478D2E /* RHIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB2F1C92027F00478D2E /* RHIConstants.m */; };
-		32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3FB371C921A1E00478D2E /* RHIViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		323226341C98B30600E620D1 /* RHIHashDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIHashDataSource.h; path = Model/HashDataSource/RHIHashDataSource.h; sourceTree = "<group>"; };
 		323226351C98B30600E620D1 /* RHIHashDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIHashDataSource.m; path = Model/HashDataSource/RHIHashDataSource.m; sourceTree = "<group>"; };
+		3250BDC51C9D77DB0039AC7B /* RHIRoboHash+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RHIRoboHash+CoreDataProperties.h"; path = "Model/PersistentStack/RoboHash/RHIRoboHash+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3250BDC61C9D77DB0039AC7B /* RHIRoboHash+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RHIRoboHash+CoreDataProperties.m"; path = "Model/PersistentStack/RoboHash/RHIRoboHash+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3250BDC71C9D77DB0039AC7B /* RHIRoboHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIRoboHash.h; path = Model/PersistentStack/RoboHash/RHIRoboHash.h; sourceTree = "<group>"; };
+		3250BDC81C9D77DB0039AC7B /* RHIRoboHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIRoboHash.m; path = Model/PersistentStack/RoboHash/RHIRoboHash.m; sourceTree = "<group>"; };
+		3250BDCB1C9D8A3A0039AC7B /* UITableViewCell+RoboHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+RoboHash.h"; path = "Categories/UITableViewCell+RoboHash.h"; sourceTree = "<group>"; };
+		3250BDCC1C9D8A3A0039AC7B /* UITableViewCell+RoboHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+RoboHash.m"; path = "Categories/UITableViewCell+RoboHash.m"; sourceTree = "<group>"; };
 		328DB29C1C9B7B2400C09A00 /* NSString+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Random.h"; path = "Categories/NSString+Random.h"; sourceTree = "<group>"; };
 		328DB29D1C9B7B2400C09A00 /* NSString+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Random.m"; path = "Categories/NSString+Random.m"; sourceTree = "<group>"; };
 		328DB2A01C9B858800C09A00 /* RHIImageProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIImageProxy.h; path = Model/ImageProxy/RHIImageProxy.h; sourceTree = "<group>"; };
@@ -44,6 +60,21 @@
 		32A3F1DA1C9626C80070C981 /* RHIDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIDownloader.m; path = Model/Downloader/RHIDownloader.m; sourceTree = "<group>"; };
 		32A3F1DC1C9632890070C981 /* RHIDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIDownloadOperation.h; path = Model/Downloader/RHIDownloadOperation.h; sourceTree = "<group>"; };
 		32A3F1DD1C9632890070C981 /* RHIDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIDownloadOperation.m; path = Model/Downloader/RHIDownloadOperation.m; sourceTree = "<group>"; };
+		32AEE6311C9C37F400C25BC8 /* RoboHash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoboHash.xcdatamodel; sourceTree = "<group>"; };
+		32AEE6361C9C3C2C00C25BC8 /* RHIHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIHomeViewController.h; path = Controller/Home/RHIHomeViewController.h; sourceTree = "<group>"; };
+		32AEE6371C9C3C2C00C25BC8 /* RHIHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIHomeViewController.m; path = Controller/Home/RHIHomeViewController.m; sourceTree = "<group>"; };
+		32AEE6391C9C3C5A00C25BC8 /* RHIHashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIHashViewController.h; path = Controller/Hash/RHIHashViewController.h; sourceTree = "<group>"; };
+		32AEE63A1C9C3C5A00C25BC8 /* RHIHashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIHashViewController.m; path = Controller/Hash/RHIHashViewController.m; sourceTree = "<group>"; };
+		32AEE63C1C9C3DCC00C25BC8 /* RHIHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIHistoryViewController.h; path = Controller/History/RHIHistoryViewController.h; sourceTree = "<group>"; };
+		32AEE63D1C9C3DCC00C25BC8 /* RHIHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIHistoryViewController.m; path = Controller/History/RHIHistoryViewController.m; sourceTree = "<group>"; };
+		32AEE63F1C9C402600C25BC8 /* UIView+Cornered.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Cornered.h"; path = "Categories/UIView+Cornered.h"; sourceTree = "<group>"; };
+		32AEE6401C9C402600C25BC8 /* UIView+Cornered.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Cornered.m"; path = "Categories/UIView+Cornered.m"; sourceTree = "<group>"; };
+		32AEE6421C9C423700C25BC8 /* UINavigationBar+RoboHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+RoboHash.h"; path = "Categories/UINavigationBar+RoboHash.h"; sourceTree = "<group>"; };
+		32AEE6431C9C423700C25BC8 /* UINavigationBar+RoboHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+RoboHash.m"; path = "Categories/UINavigationBar+RoboHash.m"; sourceTree = "<group>"; };
+		32AEE64D1C9CC2BF00C25BC8 /* RHICoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHICoreDataManager.h; path = Model/PersistentStack/CoreDataManager/RHICoreDataManager.h; sourceTree = "<group>"; };
+		32AEE64E1C9CC2BF00C25BC8 /* RHICoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHICoreDataManager.m; path = Model/PersistentStack/CoreDataManager/RHICoreDataManager.m; sourceTree = "<group>"; };
+		32AEE65D1C9CCA4C00C25BC8 /* RHIHashHistoryStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIHashHistoryStack.h; path = Model/PersistentStack/HashHistoryStack/RHIHashHistoryStack.h; sourceTree = "<group>"; };
+		32AEE65E1C9CCA4C00C25BC8 /* RHIHashHistoryStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIHashHistoryStack.m; path = Model/PersistentStack/HashHistoryStack/RHIHashHistoryStack.m; sourceTree = "<group>"; };
 		32B5D8E51C9B0BE000B6601F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = 3dParty/Reachability/Reachability.h; sourceTree = "<group>"; };
 		32B5D8E61C9B0BE000B6601F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = 3dParty/Reachability/Reachability.m; sourceTree = "<group>"; };
 		32E3FB111C91F78600478D2E /* RoboHash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboHash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,8 +87,6 @@
 		32E3FB251C91F78600478D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E3FB2E1C92027F00478D2E /* RHIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIConstants.h; path = Model/RHIConstants.h; sourceTree = "<group>"; };
 		32E3FB2F1C92027F00478D2E /* RHIConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIConstants.m; path = Model/RHIConstants.m; sourceTree = "<group>"; };
-		32E3FB361C921A1E00478D2E /* RHIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RHIViewController.h; path = Controller/RHIViewController.h; sourceTree = "<group>"; };
-		32E3FB371C921A1E00478D2E /* RHIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RHIViewController.m; path = Controller/RHIViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +125,12 @@
 				32A3F1D21C95A5F70070C981 /* UIViewController+Alerts.m */,
 				328DB29C1C9B7B2400C09A00 /* NSString+Random.h */,
 				328DB29D1C9B7B2400C09A00 /* NSString+Random.m */,
+				32AEE63F1C9C402600C25BC8 /* UIView+Cornered.h */,
+				32AEE6401C9C402600C25BC8 /* UIView+Cornered.m */,
+				32AEE6421C9C423700C25BC8 /* UINavigationBar+RoboHash.h */,
+				32AEE6431C9C423700C25BC8 /* UINavigationBar+RoboHash.m */,
+				3250BDCB1C9D8A3A0039AC7B /* UITableViewCell+RoboHash.h */,
+				3250BDCC1C9D8A3A0039AC7B /* UITableViewCell+RoboHash.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -134,6 +169,83 @@
 				32A3F1DD1C9632890070C981 /* RHIDownloadOperation.m */,
 			);
 			name = Downloader;
+			sourceTree = "<group>";
+		};
+		32AEE62E1C9C374400C25BC8 /* HashImages */ = {
+			isa = PBXGroup;
+			children = (
+				328DB29F1C9B855700C09A00 /* ImageProxy */,
+				323226331C98B2DD00E620D1 /* HashDataSource */,
+				32A3F1D81C9626A00070C981 /* Downloader */,
+			);
+			name = HashImages;
+			sourceTree = "<group>";
+		};
+		32AEE62F1C9C37CA00C25BC8 /* PersistentStack */ = {
+			isa = PBXGroup;
+			children = (
+				32AEE65C1C9CCA2100C25BC8 /* HashHistoryStack */,
+				32AEE64C1C9CC29E00C25BC8 /* CoreDataManager */,
+				32AEE64B1C9CC13900C25BC8 /* RoboHash */,
+				32AEE6301C9C37F400C25BC8 /* RoboHash.xcdatamodeld */,
+			);
+			name = PersistentStack;
+			sourceTree = "<group>";
+		};
+		32AEE6331C9C38D600C25BC8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				32AEE63C1C9C3DCC00C25BC8 /* RHIHistoryViewController.h */,
+				32AEE63D1C9C3DCC00C25BC8 /* RHIHistoryViewController.m */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		32AEE6341C9C38DC00C25BC8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				32AEE6361C9C3C2C00C25BC8 /* RHIHomeViewController.h */,
+				32AEE6371C9C3C2C00C25BC8 /* RHIHomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		32AEE6351C9C3A5200C25BC8 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				32AEE6391C9C3C5A00C25BC8 /* RHIHashViewController.h */,
+				32AEE63A1C9C3C5A00C25BC8 /* RHIHashViewController.m */,
+			);
+			name = Hash;
+			sourceTree = "<group>";
+		};
+		32AEE64B1C9CC13900C25BC8 /* RoboHash */ = {
+			isa = PBXGroup;
+			children = (
+				3250BDC51C9D77DB0039AC7B /* RHIRoboHash+CoreDataProperties.h */,
+				3250BDC61C9D77DB0039AC7B /* RHIRoboHash+CoreDataProperties.m */,
+				3250BDC71C9D77DB0039AC7B /* RHIRoboHash.h */,
+				3250BDC81C9D77DB0039AC7B /* RHIRoboHash.m */,
+			);
+			name = RoboHash;
+			sourceTree = "<group>";
+		};
+		32AEE64C1C9CC29E00C25BC8 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				32AEE64D1C9CC2BF00C25BC8 /* RHICoreDataManager.h */,
+				32AEE64E1C9CC2BF00C25BC8 /* RHICoreDataManager.m */,
+			);
+			name = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		32AEE65C1C9CCA2100C25BC8 /* HashHistoryStack */ = {
+			isa = PBXGroup;
+			children = (
+				32AEE65D1C9CCA4C00C25BC8 /* RHIHashHistoryStack.h */,
+				32AEE65E1C9CCA4C00C25BC8 /* RHIHashHistoryStack.m */,
+			);
+			name = HashHistoryStack;
 			sourceTree = "<group>";
 		};
 		32B5D8E31C9B0BCE00B6601F /* 3dParty */ = {
@@ -200,14 +312,11 @@
 		32E3FB2B1C91F7E300478D2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				328DB29F1C9B855700C09A00 /* ImageProxy */,
-				323226331C98B2DD00E620D1 /* HashDataSource */,
-				32A3F1D81C9626A00070C981 /* Downloader */,
+				32AEE62F1C9C37CA00C25BC8 /* PersistentStack */,
+				32AEE62E1C9C374400C25BC8 /* HashImages */,
 				32A3F1D41C9610FE0070C981 /* DirectoryLayer */,
 				32E3FB321C920A7F00478D2E /* NetworkLayer */,
 				32E3FB311C920A7800478D2E /* Constants */,
-				32E3FB2E1C92027F00478D2E /* RHIConstants.h */,
-				32E3FB2F1C92027F00478D2E /* RHIConstants.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,8 +331,9 @@
 		32E3FB2D1C91F7F100478D2E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				32E3FB361C921A1E00478D2E /* RHIViewController.h */,
-				32E3FB371C921A1E00478D2E /* RHIViewController.m */,
+				32AEE6351C9C3A5200C25BC8 /* Hash */,
+				32AEE6341C9C38DC00C25BC8 /* Home */,
+				32AEE6331C9C38D600C25BC8 /* History */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -231,6 +341,8 @@
 		32E3FB311C920A7800478D2E /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				32E3FB2E1C92027F00478D2E /* RHIConstants.h */,
+				32E3FB2F1C92027F00478D2E /* RHIConstants.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -317,16 +429,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				32A3F1D71C96111F0070C981 /* RHIDirectoryManager.m in Sources */,
+				32AEE63B1C9C3C5A00C25BC8 /* RHIHashViewController.m in Sources */,
 				32E3FB301C92027F00478D2E /* RHIConstants.m in Sources */,
+				32AEE6381C9C3C2C00C25BC8 /* RHIHomeViewController.m in Sources */,
 				328DB2A21C9B858800C09A00 /* RHIImageProxy.m in Sources */,
 				329AE9321C9BF82C00C2FB6C /* RHIRequestManager.m in Sources */,
+				32AEE6411C9C402600C25BC8 /* UIView+Cornered.m in Sources */,
 				328DB29E1C9B7B2400C09A00 /* NSString+Random.m in Sources */,
+				32AEE6321C9C37F400C25BC8 /* RoboHash.xcdatamodeld in Sources */,
 				32E3FB191C91F78600478D2E /* AppDelegate.m in Sources */,
+				32AEE63E1C9C3DCC00C25BC8 /* RHIHistoryViewController.m in Sources */,
+				3250BDCA1C9D77DB0039AC7B /* RHIRoboHash.m in Sources */,
 				32B5D8E71C9B0BE000B6601F /* Reachability.m in Sources */,
-				32E3FB381C921A1E00478D2E /* RHIViewController.m in Sources */,
+				3250BDCD1C9D8A3A0039AC7B /* UITableViewCell+RoboHash.m in Sources */,
 				323226361C98B30600E620D1 /* RHIHashDataSource.m in Sources */,
 				32A3F1DB1C9626C80070C981 /* RHIDownloader.m in Sources */,
 				32E3FB161C91F78600478D2E /* main.m in Sources */,
+				32AEE6441C9C423700C25BC8 /* UINavigationBar+RoboHash.m in Sources */,
+				32AEE65F1C9CCA4C00C25BC8 /* RHIHashHistoryStack.m in Sources */,
+				3250BDC91C9D77DB0039AC7B /* RHIRoboHash+CoreDataProperties.m in Sources */,
+				32AEE64F1C9CC2BF00C25BC8 /* RHICoreDataManager.m in Sources */,
 				32A3F1DE1C9632890070C981 /* RHIDownloadOperation.m in Sources */,
 				32A3F1D31C95A5F70070C981 /* UIViewController+Alerts.m in Sources */,
 			);
@@ -478,6 +600,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32AEE6301C9C37F400C25BC8 /* RoboHash.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32AEE6311C9C37F400C25BC8 /* RoboHash.xcdatamodel */,
+			);
+			currentVersion = 32AEE6311C9C37F400C25BC8 /* RoboHash.xcdatamodel */;
+			path = RoboHash.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32E3FB091C91F78600478D2E /* Project object */;
 }
