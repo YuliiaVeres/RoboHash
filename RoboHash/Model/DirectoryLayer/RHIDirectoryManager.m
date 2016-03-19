@@ -27,8 +27,7 @@
         self.fileTaskQueue = [NSOperationQueue new];
         self.fileTaskQueue.maxConcurrentOperationCount = 1;
         self.fileTaskQueue.name = @"File Task Queue";
-        
-        [self configureReachability];
+        self.reachability = nil;
     }
     
     return self;
@@ -52,6 +51,8 @@
 
 - (void)checkForInitialImages
 {
+    [self configureReachability];
+    
     if (self.reachability.isReachable)
         [self __checkForInitialImages];
     else

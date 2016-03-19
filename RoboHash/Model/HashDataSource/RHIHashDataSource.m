@@ -38,16 +38,18 @@
     if ([self checkForImageInCache:name completion:completion] ||
         [self checkForImageInDirectory:name completion:completion])
         return;
-
+    
     __weak typeof(self)weakSelf = self;
     
     [requestManager obtainRobotImageForString:name withCompletion:^(NSData *imageData, NSString *requestedString) {
-
+        
         NSLog(@"<N> From *NETWORK* , named: %@. \n", requestedString);
-
+        
         typeof(weakSelf)strongSelf = weakSelf;
         
-        if (requestType == RHIRequestTypeUser && imageData)
+        BOOL imageNotStoredLocally = ![[NSUserDefaults standardUserDefaults] boolForKey:[requestedString uppercaseString]];
+        
+        if (requestType == RHIRequestTypeUser && imageNotStoredLocally && imageData)
             [strongSelf saveRoboHashWithTitle:requestedString imageData:imageData];
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -85,6 +87,8 @@
         NSLog(@"From *DIRECTORY* , named: %@. \n", imageName);
         
         [self.cache setObject:directoryImage forKey:[imageName uppercaseString]];
+        [self checkRequestedFileForBeingStoredLocally:imageName filePath:filePath];
+        
         completion(directoryImage, imageName);
     }
     return directoryImage;
@@ -92,8 +96,19 @@
 
 #pragma mark - Save user requested Robo Hash
 
+- (void)checkRequestedFileForBeingStoredLocally:(NSString *)fileName filePath:(NSURL *)filePath
+{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:[fileName uppercaseString]])
+        return;
+    
+    [self saveRoboHashWithTitle:fileName imageData:[NSData dataWithContentsOfFile:[filePath path]]];
+}
+
 - (void)saveRoboHashWithTitle:(NSString *)title imageData:(NSData *)imageData
 {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[title uppercaseString]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     NSTimeInterval requestTime = [[NSDate date] timeIntervalSince1970];
     [self.hashStack saveRoboHashWithImageData:imageData title:title requestTime:requestTime];
 }

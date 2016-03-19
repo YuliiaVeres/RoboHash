@@ -12,7 +12,7 @@
 @interface RHIDirectoryManager : NSObject
 
 + (NSURL *)pathForFileWithName:(NSString *)fileName;
-+ (void)saveDocumentWithName:(NSString *)name fromTempLocation:(NSURL *)location;;
++ (void)saveDocumentWithName:(NSString *)name fromTempLocation:(NSURL *)location;
 - (void)checkForInitialImages;
 
 @end
