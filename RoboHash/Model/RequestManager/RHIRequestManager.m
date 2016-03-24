@@ -18,7 +18,7 @@
 
 @implementation RHIRequestManager
 
-- (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSString *))completion
+- (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSError *, NSString *))completion
 {
     NSString *requestUrlString = [NSString stringWithFormat:@"%@%@", RHIBaseUrl, requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrlString]];
@@ -31,7 +31,7 @@
         NSString *requestedRobot = response.URL.pathComponents.lastObject;
         
         if (completion)
-            completion(data, requestedRobot);
+            completion(data, error, requestedRobot);
     }];
     [self.imageObtainTask resume];
 }

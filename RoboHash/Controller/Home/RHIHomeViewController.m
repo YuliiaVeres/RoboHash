@@ -57,8 +57,14 @@
 
 - (void)updateRequestsInfo:(NSNotification *)notification
 {
-    [self.context mergeChangesFromContextDidSaveNotification:notification];
-    [self executeFetch];
+    __weak typeof(self)weakSelf = self;
+    [self.context performBlock:^{
+        
+        typeof(weakSelf)strongSelf = weakSelf;
+        
+        [strongSelf.context mergeChangesFromContextDidSaveNotification:notification];
+        [strongSelfc executeFetch];
+    }];
 }
 
 - (void)executeFetch

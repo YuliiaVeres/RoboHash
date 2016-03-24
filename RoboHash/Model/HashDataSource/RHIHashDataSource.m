@@ -41,9 +41,15 @@
     
     __weak typeof(self)weakSelf = self;
     
-    [requestManager obtainRobotImageForString:name withCompletion:^(NSData *imageData, NSString *requestedString) {
+    [requestManager obtainRobotImageForString:name withCompletion:^(NSData *imageData, NSError *error, NSString *requestedString) {
         
         NSLog(@"<N> From *NETWORK* , named: %@. \n", requestedString);
+        
+        if (error)
+        {
+            NSLog(@"Error loading image : %@", error.localizedDescription);
+            return ;
+        }
         
         typeof(weakSelf)strongSelf = weakSelf;
         

@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, RHIRequestType) {
 
 @interface RHIRequestManager : NSObject
 
-- (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSString *))completion;
+- (void)obtainRobotImageForString:(NSString *)requestString withCompletion:(void(^)(NSData *, NSError *, NSString *))completion;
 - (void)downloadRobotImageForString:(NSString *)requestString handler:(void(^)(NSURL *))handler;
 
 @end
