@@ -53,15 +53,10 @@ NSString * const RHIHistoryCellIdentifier = @"HistoryCell";
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.context sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
     
-    [self executeFetch];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateContextFromNotification:) name:NSManagedObjectContextDidSaveNotification object:nil];
-}
-
-- (void)executeFetch
-{
     NSError *error = nil;
     [self.fetchedResultsController performFetch:&error];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateContextFromNotification:) name:NSManagedObjectContextDidSaveNotification object:nil];
 }
 
 - (void)updateContextFromNotification:(NSNotification *)notification
