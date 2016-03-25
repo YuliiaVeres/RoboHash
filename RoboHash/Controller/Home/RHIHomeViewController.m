@@ -63,7 +63,7 @@
         typeof(weakSelf)strongSelf = weakSelf;
         
         [strongSelf.context mergeChangesFromContextDidSaveNotification:notification];
-        [strongSelfc executeFetch];
+        [strongSelf executeFetch];
     }];
 }
 
